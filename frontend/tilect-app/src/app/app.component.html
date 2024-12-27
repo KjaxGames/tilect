@@ -1,0 +1,9 @@
+<div *ngIf="gameState">
+  <div *ngFor="let game of gameState">
+    <p>{{ game.name }}: {{ game.score }}</p>
+    <!-- <button (click)="updateGame({ ...game, score: game.score + 1 })">Increment Score</button> -->
+    <button (click)="deleteGame(game.id!)">Delete Game</button>
+  </div>
+</div>
+
+<button (click)="createGame()">Create New Game</button>

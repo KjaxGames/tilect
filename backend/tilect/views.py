@@ -10,6 +10,7 @@ from .firebase_config import firebase_admin
 
 @csrf_exempt  # Temporarily disable CSRF for simplicity (use a better solution in production)
 def create_game(request):
+    print(f"In create_game... request.method = {request.method}")
     if request.method == 'POST':
         # Get player data (you can extend this to add more player data)
         player = request.POST.get('player', 'Guest')
@@ -23,10 +24,6 @@ def create_game(request):
                     'score': 0,
                 }
             },
-            'gameState': {
-                'turn': player,
-                'board': Array(9).fill(null),  # Initialize an empty board for a 3x3 game
-            }
         })
 
         # Return the new game object created

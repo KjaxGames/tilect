@@ -2,7 +2,7 @@ import firebase_admin
 from firebase_admin import credentials, db
 
 # Initialize Firebase Admin SDK
-cred = credentials.Certificate('./firebase-admin-sdk-key.json')
+cred = credentials.Certificate('./firebase-key/firebase-admin-sdk-key.json')
 firebase_admin.initialize_app(cred, {
-    'databaseURL': 'https://your-database-name.firebaseio.com/'
+    'databaseURL': 'https://kjaxgames-tilect-default-rtdb.firebaseio.com/'
 })
